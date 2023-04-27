@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -21,3 +22,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout');
     Route::post('refresh', 'refresh');
 });
+
+Route::resource('article', ArticleController::class)->middleware('auth:api');
+Route::get('article/user/{user_id}', [ArticleController::class, 'userArticle'])->middleware('auth:api');

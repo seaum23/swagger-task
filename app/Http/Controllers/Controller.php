@@ -12,6 +12,15 @@ use Illuminate\Routing\Controller as BaseController;
  *    title="Article task!",
  *    version="1.0.0",
  * )
+ * 
+ * @OA\SecurityScheme(
+ *    securityScheme="bearer",
+ *    in="header",
+ *    name="Authorization",
+ *    type="apiKey",
+ *    scheme="bearer",
+ *    bearerFormat="JWT",
+ * ),
  */
 
 class Controller extends BaseController
