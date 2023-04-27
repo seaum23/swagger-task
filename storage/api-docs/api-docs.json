@@ -251,6 +251,15 @@
                     "name": "User"
                 }
             }
+        },
+        "securitySchemes": {
+            "bearer": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
         }
     }
 }
