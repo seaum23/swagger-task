@@ -16,32 +16,30 @@ class ArticleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_article_list()
     {
-        $response = $this->get('article')
-                    ->assertStatus(200)
-                    ->assertJsonStructure(
-                        [
-                            'data' =>  [
-                                '*' => [
-                                    "id",
-                                    "title",
-                                    "description",
-                                    "create_at",
-                                    "update_at",
-                                    "user" => [
-                                        '*' => [
-                                            "id",
-                                            "email",
-                                            "email_verified_at",
-                                            "name",
-                                            "create_at",
-                                            "update_at"
-                                        ],
-                                    ],
-                                ],
+        $this->get('article')
+            ->assertStatus(200)
+            ->assertJsonStructure(
+                [
+                    'data' =>  [
+                        '*' => [
+                            "id",
+                            "title",
+                            "description",
+                            "created_at",
+                            "updated_at",
+                            "user" => [
+                                "id",
+                                "email",
+                                "email_verified_at",
+                                "name",
+                                "created_at",
+                                "updated_at"
                             ],
-                        ]
-                    );
+                        ],
+                    ],
+                ]
+            );
     }
 }
