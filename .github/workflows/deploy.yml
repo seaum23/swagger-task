@@ -1,0 +1,21 @@
+name: Swagger Task Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+
+jobs:
+    create-project-artifacts:
+        name: Create project artifact
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+
+            - name: Compile CSS and Javascript
+                run: |
+                    npm install
+                    npm run prod
+
