@@ -19,3 +19,9 @@ jobs:
                 npm install
                 npm run build
 
+            - name: configure php 8.0
+              uses: shivammathur/setup-php@master
+              with:
+                php-version: 8.0
+                extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
+
